@@ -190,10 +190,10 @@ li.app_name {
 .navbar__right .battery__container {
   width: 22px;
   height: 10px;
-  padding: 1px;
+/* padding: 1px; */
   position: relative;
   border-radius: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+/* border: 1px solid rgba(255, 255, 255, 0.4); */
 }
 
 .navbar__right .battery__container::after {
@@ -210,10 +210,13 @@ li.app_name {
 }
 
 .navbar__right .battery__progress {
-  height: 100%;
-  display: flex;
-  background: white;
-  border-radius: 2px;
+height: 115%;
+margin-top: -0.7px;
+/* top: -96% !important; */
+display: flex;
+background: white;
+border-radius: 3px;
+
 }
 
 .navbar__right .battery__progress .is-charging {
