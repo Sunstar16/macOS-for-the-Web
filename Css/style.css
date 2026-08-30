@@ -1117,6 +1117,14 @@ cursor: url("../cursor/normal-select.png"), auto !important;
   background-color: transparent;
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
+  z-index: 99990;
+}
+
+/* New class to fade out windows when Launchpad is open */
+.windows-hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s ease !important;
 }
 
 .searchbox {
