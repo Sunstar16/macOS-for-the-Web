@@ -1,4 +1,4 @@
-# macOS-26-Tahoe-for-the-Web
+# macOS-for-the-Web
 ![macOS Web Icon](icon/macOSWeb.png)
 
 Renewed continuation of an old famous project that recreated a macOS BigSur desktop, but now updated to the newest version with fixes, improvements and features!
