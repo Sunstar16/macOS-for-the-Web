@@ -556,6 +556,7 @@ launchpad.opening.addEventListener("click", handleOpenLaunching);
 
 function handleOpenLaunching() {
   const windowContainer = document.querySelector(".container__Window");
+  const aboutWindow = document.getElementById("about-window"); // Target the About window specifically
 
   if (launchpad.window.style.display === "none") {
     // OPENING LAUNCHPAD
@@ -563,18 +564,19 @@ function handleOpenLaunching() {
     elements.navbar.style.display = "none";
     launchpad.point.style.display = "block";
     
-    // Fade out the windows
-    if (windowContainer) {
-      windowContainer.classList.add("windows-hidden");
-    }
+    // Hide standard windows
+    if (windowContainer) windowContainer.classList.add("windows-hidden");
+    
+    // Hide About window if it's currently open
+    if (aboutWindow) aboutWindow.classList.add("windows-hidden");
+
   } else {
     // CLOSING LAUNCHPAD
     launchpad.window.classList.add("launchpad-closing");
     
-    // Fade the windows back in
-    if (windowContainer) {
-      windowContainer.classList.remove("windows-hidden");
-    }
+    // Bring everything back
+    if (windowContainer) windowContainer.classList.remove("windows-hidden");
+    if (aboutWindow) aboutWindow.classList.remove("windows-hidden");
 
     setTimeout(() => {
       launchpad.window.style.display = "none";
