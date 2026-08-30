@@ -1127,6 +1127,14 @@ cursor: url("../cursor/normal-select.png"), auto !important;
   transition: opacity 0.3s ease !important;
 }
 
+/* Ensure the About Window overlay disappears when the class is added */
+#about-window.windows-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease !important;
+}
+
 .searchbox {
   width: 100%;
   height: 100px;
