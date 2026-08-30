@@ -552,13 +552,30 @@ appStoreApp.close.addEventListener("click", () => close_window(appStoreApp.windo
 
 // Launchpad logic
 launchpad.opening.addEventListener("click", handleOpenLaunching);
+/* --- Replace your handleOpenLaunching function with this --- */
+
 function handleOpenLaunching() {
+  const windowContainer = document.querySelector(".container__Window");
+
   if (launchpad.window.style.display === "none") {
+    // OPENING LAUNCHPAD
     launchpad.window.style.display = "block";
     elements.navbar.style.display = "none";
     launchpad.point.style.display = "block";
+    
+    // Fade out the windows
+    if (windowContainer) {
+      windowContainer.classList.add("windows-hidden");
+    }
   } else {
+    // CLOSING LAUNCHPAD
     launchpad.window.classList.add("launchpad-closing");
+    
+    // Fade the windows back in
+    if (windowContainer) {
+      windowContainer.classList.remove("windows-hidden");
+    }
+
     setTimeout(() => {
       launchpad.window.style.display = "none";
       elements.navbar.style.display = "flex";
