@@ -552,35 +552,33 @@ appStoreApp.close.addEventListener("click", () => close_window(appStoreApp.windo
 
 // Launchpad logic
 launchpad.opening.addEventListener("click", handleOpenLaunching);
+
 /* --- Replace your handleOpenLaunching function with this --- */
 
 function handleOpenLaunching() {
   const windowContainer = document.querySelector(".container__Window");
-  const aboutWindow = document.getElementById("about-window"); // Target the About window specifically
+  const aboutWindow = document.getElementById("about-window");
 
-  if (launchpad.window.style.display === "none") {
-    // OPENING LAUNCHPAD
+  // FIX: Check for "none" OR an empty string ""
+  if (launchpad.window.style.display === "none" || launchpad.window.style.display === "") {
+    
+    // --- OPENING LOGIC ---
     launchpad.window.style.display = "block";
-    elements.navbar.style.display = "none";
     launchpad.point.style.display = "block";
     
-    // Hide standard windows
     if (windowContainer) windowContainer.classList.add("windows-hidden");
-    
-    // Hide About window if it's currently open
     if (aboutWindow) aboutWindow.classList.add("windows-hidden");
 
   } else {
-    // CLOSING LAUNCHPAD
+    
+    // --- CLOSING LOGIC ---
     launchpad.window.classList.add("launchpad-closing");
     
-    // Bring everything back
     if (windowContainer) windowContainer.classList.remove("windows-hidden");
     if (aboutWindow) aboutWindow.classList.remove("windows-hidden");
 
     setTimeout(() => {
       launchpad.window.style.display = "none";
-      elements.navbar.style.display = "flex";
       launchpad.point.style.display = "none";
       launchpad.window.classList.remove("launchpad-closing");
     }, 300);
