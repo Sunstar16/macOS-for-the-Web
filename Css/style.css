@@ -263,12 +263,13 @@ border-radius: 3px;
 .navbar__right .battery__popup.opened {
   opacity: 1;
   border-radius: 18px;
-  background: var(--color-white-400);
+  background: var(--color-white-800);
   border: 1px solid var(--color-white-200);
   backdrop-filter: blur(5px);
   box-shadow: none;
   text-shadow: none;
   pointer-events: auto;
+  color: black;
 }
 
 .navbar__right .battery__popup header {
@@ -298,9 +299,8 @@ border-radius: 3px;
   margin: 6px 8px;
   border: 0;
   border-radius: 99px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 0.8px solid rgb(212, 212, 212);
 }
-
 .navbar__right .battery__popup button {
   padding: 4px 10px;
   display: flex;
@@ -311,6 +311,7 @@ border-radius: 3px;
   width: 100%;
   cursor: pointer;
   user-select: none;
+  color: black;
 }
 
 .navbar__right .battery__popup button:hover {
